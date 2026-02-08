@@ -57,7 +57,7 @@ local function CompileAndRun()
 end
 
 -- 映射快捷键 <leader>r 调用 CompileAndRun
-vim.keymap.set("n", "<leader>t", CompileAndRun, { desc = "编译并运行当前 C++ 文件" })
+vim.keymap.set("n", "<leader>t", CompileAndRun, { desc = "compile and run current c++ file" })
 
 -- 定义编译并运行函数
 local function CompileAndRunCMake()
