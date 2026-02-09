@@ -70,7 +70,7 @@ local function CompileAndRunCMake()
     local original_cwd = vim.fn.getcwd()
     vim.fn.chdir(dir)
 
-    -- 打开终端窗口（使用 Neovim 内置终端）
+    -- 打开终端窗口
     require("nvchad.term").new { pos = "sp" }
 
     -- 获取终端缓冲区
