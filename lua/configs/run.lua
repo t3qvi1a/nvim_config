@@ -1,8 +1,7 @@
 -- cpp Compile and Run
 local function CompileAndRun()
-
     -- 保存当前缓冲区
-    vim.api.nvim_command("w")
+    vim.api.nvim_command "w"
 
     -- 获取当前文件路径
     local current_buffer = vim.api.nvim_get_current_buf()
@@ -20,13 +19,13 @@ local function CompileAndRun()
     vim.o.makeprg = "g++ -Wall % -o %:t:r"
 
     -- 运行编译命令
-    vim.api.nvim_command("make")
+    vim.api.nvim_command "make"
 
     -- 检查编译是否成功
     if vim.v.shell_error == 0 then
         -- 打开底部终端窗口
         -- vim.api.nvim_command("botright terminal")
-        require("nvchad.term").new({ pos = "sp" })
+        require("nvchad.term").new { pos = "sp" }
 
         -- 获取终端缓冲区编号
         local termbuf = vim.api.nvim_get_current_buf()
@@ -36,7 +35,7 @@ local function CompileAndRun()
 
         -- 处理文件名中可能包含空格
         local function quote_if_needed(str)
-            if str:find("%s") then
+            if str:find "%s" then
                 return '"' .. str:gsub('"', '\\"') .. '"'
             else
                 return str
@@ -62,7 +61,7 @@ vim.keymap.set("n", "<leader>t", CompileAndRun, { desc = "compile and run curren
 -- 定义编译并运行函数
 local function CompileAndRunCMake()
     -- 保存当前文件
-    vim.api.nvim_command("w")
+    vim.api.nvim_command "w"
 
     -- 获取当前文件所在目录
     local filepath = vim.api.nvim_buf_get_name(0)
@@ -73,7 +72,7 @@ local function CompileAndRunCMake()
     vim.fn.chdir(dir)
 
     -- 打开终端窗口（使用 Neovim 内置终端）
-    require("nvchad.term").new({ pos = "sp" })
+    require("nvchad.term").new { pos = "sp" }
 
     -- 获取终端缓冲区
     local termbuf = vim.api.nvim_get_current_buf()
@@ -92,4 +91,3 @@ end
 
 -- 绑定快捷键
 vim.keymap.set("n", "<leader>r", CompileAndRunCMake, { desc = "Compile and run CMake project" })
-

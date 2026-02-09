@@ -1,14 +1,10 @@
-require "nvchad.options"
-
--- add yours here!
-
--- local o = vim.o
--- o.cursorlineopt ='both' -- to enable cursorline!
-
 require("nvchad.options")
 require("configs.run")
 
 local o = vim.o
+
+-- enable cursorline
+-- o.cursorlineopt ='both'
 
 -- Indenting
 o.expandtab = true

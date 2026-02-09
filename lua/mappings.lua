@@ -21,24 +21,24 @@ map("n", "<A-d>", "ggvGddd")
 -- terminal mode movement
 map("t", "<C-k>", "<C-\\><C-N>", { desc = "move up" })
 
--- multiple line moving
-map("v", "J", ":m '>+1<CR>gv=gv")
-map("v", "K", ":m '<-1<CR>gv=gv")
-
+-- new terminals
 -- new window
 map("n", "<leader>h", "<C-w>v")
 map("n", "<leader>v", "<C-w>s")
 
--- new terminals
+-- multiple line moving
+-- map("v", "J", ":m '>+1<CR>gv=gv")
+-- map("v", "K", ":m '<-1<CR>gv=gv")
+
 map("n", "<A-j>", function()
     require("nvchad.term").new({ pos = "sp" })
 end, { desc = "terminal new horizontal term" })
 
--- quit terminal mode
-map("t", "<A-j>", "<C-\\><C-N>:q<cr>", { desc = "terminal escape terminal mode" })
-
 -- Nvim-tree
 map("n", "<C-n>", ":NvimTreeToggle<CR>")
+
+-- quit terminal mode
+map("t", "<A-j>", "<C-\\><C-N>:q<cr>", { desc = "terminal escape terminal mode" })
 
 -- Telescope
 map("n", "<A-p>", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
