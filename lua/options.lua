@@ -1,5 +1,5 @@
-require("nvchad.options")
-require("configs.run")
+require "nvchad.options"
+require "scripts.runcpp"
 
 local o = vim.o
 
@@ -16,5 +16,3 @@ o.softtabstop = 4
 -- number setting
 o.relativenumber = false
 o.number = true
-
-

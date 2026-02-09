@@ -1,4 +1,3 @@
--- cpp Compile and Run
 local function CompileAndRun()
     -- 保存当前缓冲区
     vim.api.nvim_command "w"

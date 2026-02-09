@@ -1,4 +1,4 @@
-require("nvchad.mappings")
+require "nvchad.mappings"
 local map = vim.keymap.set
 
 -- general settings
@@ -31,7 +31,7 @@ map("n", "<leader>v", "<C-w>s")
 -- map("v", "K", ":m '<-1<CR>gv=gv")
 
 map("n", "<A-j>", function()
-    require("nvchad.term").new({ pos = "sp" })
+    require("nvchad.term").new { pos = "sp" }
 end, { desc = "terminal new horizontal term" })
 
 -- Nvim-tree
