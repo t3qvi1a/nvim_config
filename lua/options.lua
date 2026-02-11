@@ -16,3 +16,4 @@ o.softtabstop = 4
 -- number setting
 o.relativenumber = false
 o.number = true
+

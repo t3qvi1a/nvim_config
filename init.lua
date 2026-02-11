@@ -15,14 +15,14 @@ local lazy_config = require "configs.lazy"
 
 -- load plugins
 require("lazy").setup({
-  {
-    "NvChad/NvChad",
-    lazy = false,
-    branch = "v2.5",
-    import = "nvchad.plugins",
-  },
+    {
+        "NvChad/NvChad",
+        lazy = false,
+        branch = "v2.5",
+        import = "nvchad.plugins",
+    },
 
-  { import = "plugins" },
+    { import = "plugins" },
 }, lazy_config)
 
 -- load theme
@@ -35,3 +35,12 @@ require "autocmds"
 vim.schedule(function()
     require "mappings"
 end)
+
+-- Load snippets from ~/.config/nvim/luasnips/
+require("luasnip.loaders.from_lua").load { paths = "~/.config/nvim/luasnips/" }
+
+-- luasnips
+require("luasnip").config.set_config({ -- Setting LuaSnip config
+    -- Enable autotriggered snippets
+    enable_autosnippets = true,
+})
